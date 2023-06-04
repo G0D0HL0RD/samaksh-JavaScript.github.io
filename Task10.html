@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array Methods in console window</h1>
+    <script>
+        var arr1 = [10,20,30];
+        var arr2 = [40,50,60];
+        console.log("arr1= "+arr1+" "+"arr2= "+arr2);
+
+        const arr3 = arr1.concat(arr2);
+        console.log("Concat method")
+        console.log(arr3);
+
+        console.log("copyWithin Method");
+        console.log(arr1.copyWithin(2,0));
+
+        console.log("Map Method");
+        arr3.map((val,index)=>{
+            console.log(val)
+        });
+
+        console.log("Every Method");
+        console.log(arr3.every((a)=>{
+            return a>30;
+        }));
+
+        console.log("Some Method");
+        console.log(arr3.some((a)=>{
+            return a>20;
+        }));
+
+        console.log("Filter Method");
+        console.log(arr3.filter((a)=>{
+            return a >= 22;
+        }))
+
+        console.log("Find Method");
+        console.log(arr3.find((a)=>{
+            return a>29;
+        }))
+
+        console.log("FindIndex Method");
+        console.log(arr3.findIndex((a)=>{
+            return a>29;
+        }))
+
+        console.log("indexOf Method");
+        console.log(arr3.indexOf(40));
+
+        console.log("LastIndexOf Method");
+        console.log(arr3.indexOf(46));
+
+        console.log("push Method");
+        arr3.push(49);
+        console.log(arr3);
+
+        console.log("pop Method");
+        arr3.pop(60);
+        console.log(arr3);
+
+        console.log("shift Method");
+        arr3.shift();
+        console.log(arr3);
+    </script>
+</body>
+</html>

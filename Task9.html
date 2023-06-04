@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .r1 {
+            display: inline-block !important;
+        }
+
+        .r2 {
+            display: inline-block !important;
+        }
+
+        form {
+            max-width: max-content;
+            padding: 20px;
+            margin: 50px auto !important;
+            background-color: darkmagenta;
+        }
+
+        input {
+            margin: 0px;
+        }
+
+        td {
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body class="bg-danger-subtle">
+    <form name="myForm" onsubmit="return validate()">
+        <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td style="padding-left:80px;"><input name="name" class="form-control" type="text"
+                        placeholder="Your name"></td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td style="padding-left:80px;"><input name="email" class="form-control" type="text"
+                        placeholder="Your email"></td>
+            </tr>
+
+            <tr>
+                <td><label for="pass">Password:</label></td>
+                <td style="padding-left:80px;"><input name="pwd" class="form-control" type="password"
+                        placeholder="Your password">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="Pnum">Phone Number:</label></td>
+                <td style="padding-left:80px;"><input name="num" class="form-control" type="number"
+                        placeholder="Your number"></td>
+            </tr>
+
+            <tr>
+                <td><label for="gen">Gender:</label></td>
+                <td style="padding-left:80px;">
+                    <input class="form-check r1" type="radio" value="Male" name="gen">
+                    <label for="male">Male</label>
+                    <input class="form-check r2" type="radio" value="Female" name="gen">
+                    <label for="fmale">Female</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="lang">Language:</label></td>
+                <td style="padding-left:80px;"><select name="lang" class="forms-select">
+                        <option selected>Select Language</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                        <option value="Others">Others</option>
+                    </select></td>
+            </tr>
+
+            <tr>
+                <td><label for="zcode">Zip Code:</label></td>
+                <td style="padding-left:80px;"><input class="form-control" type="number" name="zcode" id="code">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="abt">About:</label></td>
+                <td style="padding-left:80px;"><textarea class="form-control" name="abt" id="about" cols="30"
+                        rows="5"></textarea></td>
+            </tr>
+
+            <tr class="text-center">
+                <td colspan="2"><button class="btn btn-success px-5" type="submit">Register</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validate() {
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var atposition = email.indexOf("@");
+            var dotposition = email.lastIndexOf(".");
+            var password = document.forms["myForm"]["pwd"].value;
+            var num = document.myForm.num.value;
+            var code = document.forms["myForm"]["zcode"].value;
+
+
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            }
+            else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                    alert("Please enter a valid e-mail address");
+                    return false;
+            }
+            else if (isNaN(num)) {
+                alert("Enter Numeric value only");
+                return false;
+            }
+            if(code == null || code.length<6 || code== ""){
+                alert("Enter a valid code");
+                return false
+            }
+            }
+    </script>
+</body>
+
+</html>

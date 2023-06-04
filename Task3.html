@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <form action="" name="myForm" onsubmit="return validate()">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><p id="p1" style="color: red;"></p><br><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email"><p id="p2" style="color: red;"></p><br><br>
+        <label for="web">Website:</label>
+        <input type="url" name="url" id="web"><p id="p3" style="color: red;"></p><br><br>
+        <label for="msg">Message:</label>
+        <textarea name="message" id="msg" cols="30" rows="5"></textarea><p id="p4" style="color: red;"></p><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validate() {
+            let x = document.forms["myForm"]["name"].value;
+            let y = document.forms["myForm"]["email"].value;
+            let w = document.forms["myForm"]["url"].value;
+            if (x == "" || y=="" || w=="") {
+                document.getElementById("name").style.border="2px solid red";
+                document.getElementById("p1").innerHTML="This field is required";
+                document.getElementById("email").style.border="2px solid red";
+                document.getElementById("p2").innerHTML="A valid email address is required";
+                document.getElementById("web").style.border="2px solid red";
+                document.getElementById("p3").innerHTML="A valid url is required";
+                document.getElementById("msg").style.border="2px solid red";
+                document.getElementById("p4").innerHTML="This field is required";
+                return false;
+            }
+            
+}
+    </script>
+</body>
+</html>

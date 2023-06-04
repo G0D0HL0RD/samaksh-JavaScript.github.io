@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    #train {
+      position: relative;
+      cursor: pointer;
+    }
+  </style>
+  <title>Task 8</title>
+</head>
+
+<body>
+
+  <img id="train" src="https://js.cx/clipart/train.gif"><br><br>
+  <h2 style="color: blueviolet;">Click the buttons to handle animations</h2>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+
+
+  <script>
+    start=()=> {
+      let start = Date.now();
+
+      let timer = setInterval(function() {
+        let timePassed = Date.now() - start;
+
+        train.style.left = timePassed / 5 + 'px';
+
+        // if (timePassed > 2000) clearInterval(timer);
+
+    }, 20);
+    stop = ()=>{
+        clearInterval(timer);
+    }
+}
+  </script>
+
+
+</body>
+
+</html>
